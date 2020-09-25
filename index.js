@@ -13,19 +13,8 @@ mongoose.connect(
 
 requireDir('./src/models');
 
-const Produto = mongoose.model('Produto');
-
-//Primeira rota
-app.get('/', (req, res) =>{
-    Produto.create({ 
-        titulo: 'Geek Store',
-        descriçao: 'Site de venda de produtos geek', 
-        url: 'http://geekzstore.com.br/'
-    });
-
-
-    return res.send(' Programação para internet II ');
-});
+// Rotas
+app.use('/api', require('./src/routes')) //Recebe as requisições
 
 app.listen(3001);
 
