@@ -17,7 +17,6 @@ module.exports = {
     },
 
     async criacao(req, res){
-        // Criação
         const produto = await Produto.create(req.body);
 
         return res.json(produto);
