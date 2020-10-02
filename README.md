@@ -10,7 +10,7 @@ npm install express -> node express -> microserviços(dependêcias) -> rotas(api
 npm install -D nodemon -> nodemon -> faz automaticamente a reinicialização do servidor sempre que for alterado
 após configurar o nodemon -> npm run dev
 
-mongodb -> banco de dados utilizado
+mongodb -> banco de dados utilizado -> roboto 3t para visualição grafica do mongoDB
 
 npm install mongoose -> encapsula a logica do BD através do código JS (ORM-Object Relation Map)
 
