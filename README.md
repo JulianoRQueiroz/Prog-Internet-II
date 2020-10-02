@@ -1,5 +1,5 @@
 # Prog Internet II
- Api-RestFull
+ Api-RestFull -> PROGRAMAÇÂO PARA INTERNET II -> Javascript
 
 
 Tecnologias:
@@ -16,7 +16,7 @@ npm install mongoose -> encapsula a logica do BD através do código JS (ORM-Obj
 
 schema -> quais os campos que o produto pode ter e os tipos de valores salvos
 
-npm install require-dir -> faz require automaticamente
+npm install require-dir -> faz require automaticamente/ Padrão MVC
 
 insomina para testar a api -> "base_url": http://localhost:3001/api/produtos
 
