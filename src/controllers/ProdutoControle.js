@@ -41,7 +41,7 @@ module.exports = {
     async deleta(req, res){
         await Produto.findByIdAndRemove(req.params.id);
 
-        return res.status(200).send({message: 'Exclusão de cadastro realizada com sucesso!'});
+        return res.status(200).send({message: 'Exclusão realizada com sucesso!'});
 
     }
 }
