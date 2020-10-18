@@ -14,6 +14,7 @@ rotas.delete('/produtos/:id', ProdutoControle.deleta);
 //Rota Usuários
 rotas.get('/users', UserController.lista);
 rotas.post('/users', UserController.cria);
+rotas.post('/autentica', UserController.autenticacao);
 
 
 module.exports = rotas;
