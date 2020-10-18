@@ -17,9 +17,18 @@ module.exports = {
     },
 
     async criacao(req, res){
-        const produto = await Produto.create(req.body);
+        const {url} = req.body;
 
-        return res.json(produto);
+        try {
+            if(await Produto.findOne({url}))
+                return res.status(400).send({error: 'O produto já existe'});
+
+            const produto = await Produto.create(req.body);
+
+            return res.json(produto)
+        }catch (err){
+            return res.status(400).send({erro: 'Erro de conexão com o servidor'})
+        }
     },
 
     async atualiza(req, res){
@@ -32,6 +41,7 @@ module.exports = {
     async deleta(req, res){
         await Produto.findByIdAndRemove(req.params.id);
 
-        return res.send();
+        return res.status(200).send({message: 'Exclusão de cadastro realizada com sucesso!'});
+
     }
 }
