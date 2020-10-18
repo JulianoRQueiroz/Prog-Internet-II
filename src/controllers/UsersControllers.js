@@ -18,11 +18,11 @@ module.exports = {
 
             const user = await User.create(req.body);
 
-            user.passoword = undefined;
+            user.password = undefined; //removendo password
 
             return res.json(user);
         }catch (err){
-            return res.status(400).send({erro: 'ok'})
+            return res.status(400).send({erro: 'Erro de conexão com o servidor'})
         }
     }
 };
