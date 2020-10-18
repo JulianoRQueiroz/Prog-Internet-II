@@ -6,6 +6,12 @@ const autenticaConfig = require('../config/autentic.json')
 
 const User = mongoose.model('User');
 
+function geraToken(parms = {}){
+    return jwt.sign(parms, autenticaConfig.secret, {
+        expiresIn: 86400, //expiração do token
+    });
+}
+
 module.exports = {
     async lista(req, res) {
         const users = await User.find();
@@ -24,7 +30,10 @@ module.exports = {
 
             user.password = undefined; //removendo password
 
-            return res.json(user);
+            return res.json({
+                user,
+                token:geraToken({id: user.id}),
+            });
         }catch (err){
             return res.status(400).send({erro: 'Erro de conexão com o servidor'})
         }
@@ -43,10 +52,6 @@ module.exports = {
 
         user.password = undefined;
 
-        const token = jwt.sign({ id: user.id }, autenticaConfig.secret, {
-            expiresIn: 86400, //expiração do token
-         } )
-
-        res.send({user, token});
+        res.send({user, token:geraToken({id: user.id})});
     }
 };
