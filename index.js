@@ -20,5 +20,5 @@ requireDir('./src/models');
 app.use('/api', require('./src/routes')); //Recebe as requisições api/produtos
 app.use('/token', require('./src/routes')); //Recebe as requisições token/users
 
-app.listen(3001);
+app.listen(process.env.PORT || 3001);
 
