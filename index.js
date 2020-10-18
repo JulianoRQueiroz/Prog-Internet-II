@@ -1,10 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const requireDir = require('require-dir');
 
 //Inicializando o app
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 // Iniciando o BD (conexão)
 mongoose.connect(
