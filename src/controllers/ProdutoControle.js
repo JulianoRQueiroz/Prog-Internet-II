@@ -21,7 +21,7 @@ module.exports = {
 
         try {
             if(await Produto.findOne({url}))
-                return res.status(400).send({error: 'O produto já existe'});
+                return res.status(400).send({error: 'A empresa/produto já existe. Cadastre uma nova url.'});
 
             const produto = await Produto.create(req.body);
 
