@@ -13,11 +13,3 @@ após configurar o nodemon -> npm run dev
 mongodb -> banco de dados utilizado -> roboto 3t para visualição grafica do mongoDB
 
 npm install mongoose -> encapsula a logica do BD através do código JS (ORM-Object Relation Map)
-
-schema -> quais os campos que o produto pode ter e os tipos de valores salvos
-
-npm install require-dir -> faz require automaticamente/ Padrão MVC
-
-insomina para testar a api -> "base_url": http://localhost:3001/api/produtos
-
-npm install mongoose-paginate -> paginação da api 
