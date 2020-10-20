@@ -17,7 +17,7 @@ const UserSchema = new mongoose.Schema({
         require: true,
         select: false //sem campo senha
     },
-    createAt: {
+    criaData: {
         type: Date,
         default: Date.now
     }
